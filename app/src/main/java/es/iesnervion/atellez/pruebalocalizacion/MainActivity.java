@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     LocationManager locationManager;
     Double latitud, longitud;
-
+    String lat, longi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,17 +58,21 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             return;
         }
-        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        textView2.setText("Latitude"+latitud);
-        latitud = location.getLatitude();
-        textView3.setText("Longitude"+location.getLongitude());
-        longitud = location.getLongitude();
+        //location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        //textView2.setText("Latitude"+latitud);
+        //latitud = location.getLatitude();
+        //textView3.setText("Longitude"+location.getLongitude());
+        //longitud = location.getLongitude();
         if (location!=null){
-            textView2.setText("Latitude"+latitud);
+            //textView2.setText("Latitude"+latitud);
             latitud = location.getLatitude();
-            textView3.setText("Longitude"+location.getLongitude());
+            //textView3.setText("Longitude"+location.getLongitude());
 
             longitud = location.getLongitude();
+            longi = String.valueOf(longitud);
+            lat = String.valueOf(latitud);
+            textView2.setText(lat);
+            textView3.setText(longi);
         }
 
 
